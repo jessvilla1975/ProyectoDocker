@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="login.component.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <title>Login - CampusRide</title>
+</head>
+
+<body>
+
+  <app-header></app-header> <!-- Encabezado común para todas las páginas -->
+  <!-- Contenido del login -->
+  <main class="login-container">
+    <div class="image-container">
+      <img src="assets/images/fondologin.webp" alt="Fondo de login" class="background-image">
+    </div>
+    <div class="login-box">
+      <h1 class="title">CAMPUSRIDE</h1>
+      <h2 class="login-header">INICIAR SESIÓN</h2>
+      <p class="login-subtitulo">Ingrese sus credenciales para acceder a su cuenta</p>
+
+      <form [formGroup]="ingresoUsuario" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" formControlName="correo" placeholder="Ingresa tu correo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">contrasena</label>
+          <div class="password-container">
+            <input
+              [type]="isPasswordVisible ? 'text' : 'password'"
+              id="password"
+              formControlName="contrasena"
+              placeholder="Ingresa tu contrasena"
+              required>
+            <img
+              src="assets/images/ojo_cerrado.webp"
+              class="toggle-password"
+              alt="Mostrar/Ocultar contrasena"
+              (click)="togglePasswordVisibility()"
+              [src]="isPasswordVisible ? 'assets/images/ojo_abierto.webp' : 'assets/images/ojo_cerrado.webp'">
+          </div>
+        </div>
+
+        <p>¿Olvidaste tu contraseña? <a routerLink="/password-recovery">Restablecer contraseña</a></p>
+        <div class="form-group">
+          <button type="submit" class="bt">Iniciar sesión</button>
+        </div>
+      </form>
+
+      <div class="registrarte">
+        <a routerLink="/registro">Registrarte</a>
+      </div>
+    </div>
+  </main>
+  <app-footer></app-footer> <!-- Pie de página común para todas las páginas -->
+</body>
+</html>

@@ -1,0 +1,177 @@
+//local : http://localhost:9001/api/usuarios HTTP/1.1
+
+### Solicitud para obtener la API
+GET https://api-rest-vo9r.onrender.com/api HTTP/1.1
+
+### Solicitud para obtener todos los usuarios
+GET https://api-rest-vo9r.onrender.com/api/usuarios HTTP/1.1
+
+
+### Solicitud para obtener un usuario local
+GET http://localhost:9001/api/usuarios HTTP/1.1
+//*********************  POST  *********************//
+
+### Solicitud para iniciar sesión
+POST http://localhost:9001/api/login
+Content-Type: application/json
+
+{
+    "correo": "juan.perez@example.com",
+    "contraseña": "contraseña123"
+}
+
+### Solicitud para crear un nuevo usuario
+POST http://localhost:9001/api/newUser
+Content-Type: application/json
+
+{
+        "id": 3,
+        "genero": "Femenino",
+        "nombre": "jess",
+        "apellido": "villa",
+        "correo": "jexikvilla@gmail.com",
+        "telefono": "9876543210",
+        "direccion": "Avenida Siempre Viva 456",
+        "fecha_nacimiento": "1995-05-15",
+        "contraseña": "123123"
+        
+}
+
+### Solicitud para crear un nuevo usuario conductor
+POST https://api-rest-vo9r.onrender.com/api/newConductor
+Content-Type: application/json
+
+{
+    "id_conductor": 3,
+    "numero_licencia": "ABC123456",
+    "fecha_vencimiento": "2025-12-31"
+}
+
+### Solicitud para crear un nuevo vehiculo
+POST https://api-rest-vo9r.onrender.com/api/newVehiculo
+Content-Type: application/json
+
+{
+    "id_placa": 3,
+    "id_conductor": 3,
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "ano": "2020",
+    "color": "Rojo",
+    "capacidad_pasajeros": "5"
+}
+### Solicitud restaurar contraseña
+POST https://api-rest-vo9r.onrender.com/api/sendVerificationCode
+Content-Type: application/json
+
+{
+    "correo": "watewo5105@chainds.com"
+}
+
+### Solicitud para verificar código de verificación
+POST https://api-rest-vo9r.onrender.com/api/verifyCode
+Content-Type: application/json
+    
+    {
+        "correo": "watewo5105@chainds.com",
+        "codigo_verificacion": "477468"
+    }
+
+### restablecer contraseña
+POST https://api-rest-vo9r.onrender.com/api/newPassword
+Content-Type: application/json
+
+{
+    "correo": "watewo5105@chainds.com",
+    "contraseña": "nuevaContraseña123"
+}
+
+
+//*********************  PUT *********************//
+### Solicitud para actualizar un usuario
+PUT http://localhost:9001/api/updateUser/1
+Content-Type: application/json
+
+{
+    "genero": "Masculino",
+    "nombre": "Juan",
+    "apellido": "Pérez",
+    "correo": "juan.perez@example.com",
+    "telefono": "1234567890",
+    "direccion": "Calle Falsa 123",
+    "fecha_nacimiento": "1990-01-01",
+    "contraseña": "123456"
+}
+
+### Solicitud para actualizar un conductor
+PUT http://localhost:9001/api/updateConductor/1
+Content-Type: application/json
+
+{
+    "numero_licencia": "XYZ987654",
+    "fecha_vencimiento": "2028-05-30"
+}
+
+
+### Solicitud mesa de ayuda 
+#POST https://api-rest-vo9r.onrender.com/api/helpDesk
+POST http://localhost:9001/api/helpDesk
+Content-Type: application/json
+
+{
+    "nombre": "Jess Villa",
+    "correo": "jess.villa@example.com",
+    "telefono": "1234567890",
+    "comentario": "Necesito ayuda con el registro en la aplicación"
+}
+
+### Solicitud para crear un nuevo viaje
+
+POST http://localhost:9001/api/viajes
+Content-Type: application/json
+
+{
+    "id_usuario": 3,
+    "origen": "Universidad del Valle Sede Tuluá, Carrera 27 entre Calles 23 y 24",
+    "destino": "Universidad del Valle Sede Buga, Calle 13 Nro. 100-00", 
+    "fecha": "2024-10-03",
+    "horaviaje": "14:30:00",
+    "distancia_recorrido": 7.5,
+    "duracionViaje": 40.6,
+    "costo_viaje": 3500
+}
+
+### Solicitud para aceptar un viaje
+PUT http://localhost:9001/api/aceptarViaje/2
+Content-Type: application/json
+
+{
+    "id_conductor": 1
+}
+
+//*********************  GET *********************//
+### Solicitud para obtener todos los conductores
+GET https://api-rest-vo9r.onrender.com/api/conductores HTTP/1.1
+
+### Solicitud para obtener todos los vehiculos
+GET https://api-rest-vo9r.onrender.com/api/vehiculos HTTP/1.1
+
+
+### Solicitud para obtener un usuario
+GET http://localhost:9001/api/usuariosid/3 HTTP/1.1
+
+
+### SOlicitud historial de viajes
+GET http://localhost:9001/api/historialViajes/3 HTTP/1.1
+
+### SOlicitud historial de viajes conductor
+GET http://localhost:9001/api/historialViajesConductor/1 HTTP/1.1
+
+### Solicitud viajes disponibles
+GET http://localhost:9001/api/solicitudViajes HTTP/1.1
+
+### Solicitud ubicacion
+GET http://localhost:9001/api/ubicacion/1 HTTP/1.1
+
+###Ruta para obtener las coordenadas de un viaje por ID
+GET http://localhost:9001/api/coordenadas-viaje/5 HTTP/1.1

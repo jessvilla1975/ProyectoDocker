@@ -1,0 +1,364 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contenedor del inicio de sesión */
+.registro-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  overflow-y: auto;
+  background-color: #cdbef1;
+
+}
+
+/* Caja de registro */
+.registro-box {
+  background: white;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.10);
+  border-radius: 20px;
+  padding: 40px; /* Aumentar el padding general */
+  width: 80%; /* Cambiar el ancho al 80% para más espacio */
+  max-width: 600px; /* Aumentar el ancho máximo */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  margin-top: 50px;
+
+
+
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between; /* Espacia las columnas */
+  margin-bottom: 20px; /* Espacio entre filas */
+}
+
+.form-group {
+  flex: 1; /* Hace que cada columna ocupe el mismo espacio */
+  margin-right: 15px; /* Espacio entre columnas */
+}
+
+.form-group:last-child {
+  margin-right: 0; /* Elimina el margen derecho en la última columna */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #6C6C6C;
+  font-size: 14px;
+}
+
+
+/* Estilo para el título de registro */
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"] {
+  width: 100%; /* Asegura que todos los inputs ocupen el 100% del ancho */
+  padding: 10px; /* Espacio interno */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde suave */
+  font-size: 14px; /* Tamaño de fuente uniforme */
+  font-family: 'Montserrat', sans-serif; /* Fuente consistente */
+  font-weight: 500; /* Peso de fuente */
+  color: #6C6C6C;
+}
+
+
+p {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+a {
+  color: #8450E1;   /* Color del texto Reestrablecer contraseña */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Registrarte */
+.registrarte {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.registrarte a {
+  color: #8450E1;  /* Color del texto Registrarte */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* Imagen */
+.imagen-container {
+  width: 50%; /* 50% del ancho */
+  height: 100%;
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  position: relative; /* Posición relativa para el contenido */
+}
+
+.imagen-container img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área */
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px; /* Ajusta el tamaño según sea necesario */
+  height: 20px; /* Ajusta el tamaño según sea necesario */
+}
+
+/* ------------------------------------------------------------------*/
+
+.radio-input input {
+  display: none;
+}
+
+.radio-input {
+  --container_width: 165px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000000;
+  width: var(--container_width);
+  overflow: hidden;
+  border: 1px solid rgba(53, 52, 52, 0.226);
+  margin-left: 25px;
+  top: -30px;
+  left: 320px;
+}
+
+.radio-input label {
+  width: 100%;
+  padding: 2px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 15px;
+  margin-left: -8px;
+}
+
+.selection {
+  display: none;
+  position: absolute;
+  height: 100%;
+  width: calc(var(--container_width) / 2);
+  z-index: 0;
+  left: 0;
+  top: 0;
+  transition: .15s ease;
+}
+
+.registarsebtn {
+  background-color: #8550e1;
+  width: 100%;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+  border: none;
+}
+.registarsebtn:hover {
+  background-color: #7145d6;
+}
+.radio-input label:has(input:checked) {
+  color: #fff;
+}
+
+.radio-input label:has(input:checked) ~ .selection {
+  background-color: #7145d6;
+  display: inline-block;
+}
+
+.radio-input label:nth-child(1):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 0/2));
+}
+
+.radio-input label:nth-child(2):has(input:checked) ~ .selection {
+  transform: translateX(calc(var(--container_width) * 1/2));
+}
+
+/* DIVISOR ---------------------------------------------------------------------------*/
+.divider {
+  height: 2px; /* Altura de la línea */
+  background-color: #bebebe; /* Color de la línea */
+  margin: 20px 0; /* Espaciado arriba y abajo */
+}
+
+/* -ARCHIVO- ---------------------------------------------------------------------------*/
+.container-btn-file {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #8550e1;
+  color: #fff;
+  border-style: none; /* Espaciado del botón */
+  border-radius: 0.5em; /* Reduce el redondeo */
+  font-size: 16px; /* Reduce el tamaño del texto */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  z-index: 1; /* Asegura que el contenido esté sobre el ::before */
+  box-shadow: 4px 8px 10px -3px rgba(0, 0, 0, 0.356);
+  transition: all 250ms;
+}
+
+.container-btn-file input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.container-btn-file > img {
+  position: absolute;
+  left: 30px; /* Ajusta la posición a la izquierda */
+  top: 50%; /* Centra verticalmente */
+  height: 30px;
+  transform: translateY(-50%); /* Centra verticalmente */
+}
+.container-btn-file::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-radius: 0.7em; /* Ajusta según el tamaño del botón */
+  background-color: #7145d6;
+  z-index: -1;
+  transition: all 350ms;
+}
+.container-btn-file:hover::before {
+  width: 100%;
+}
+  .form-group label {
+    display: block; /* Asegura que cada etiqueta esté en su propia línea */
+    margin-bottom: 10px; /* Espacio debajo de cada etiqueta */
+  }
+  .container-btn-file {
+    margin-bottom: 20px; /* Espacio debajo de cada botón */
+  }
+/* ------------------------------------------------------------------*/
+/* ------------------------------------------------------------------*/
+
+.container input[type="radio"] {
+  display: none;
+}
+
+/* Tabs */
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 2px solid #ddd;
+  width: fit-content;
+  padding-bottom: 5px;
+}
+/* Ocultar los inputs radio */
+.tabs input[type="radio"] {
+  display: none;
+}
+/* Estilo de las etiquetas de los tabs */
+.tabs .tab {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+  padding: 2px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+/* Cambio de color al seleccionar */
+.tabs input[type="radio"]:checked + .tab {
+  color:#8550e1; /* Morado */
+}
+
+.tabs .glider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: #8550e1; /* Morado */
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.container input[type="radio"]:checked + label {
+  color: #185ee0;
+}
+
+.container input[id="radio-masculino"]:checked ~ .glider {
+  transform: translateX(0);
+}
+
+.container input[id="radio-femenino"]:checked ~ .glider {
+  transform: translateX(100%);
+}
+
+
+
+
+
+/* Cambio de color al seleccionar */
+@media (max-width: 700px) {
+  .tabs {
+    transform: scale(0.8); /* Reducir ligeramente en pantallas pequeñas */
+  }
+}
+@media (max-width: 932px) {
+  .registro-container {
+    flex-direction: column; /* Cambia la dirección a columna */
+  }
+  .form-row{
+    flex-direction: column;
+    
+  }
+  .form-group{
+    margin-bottom: 2px;
+  }
+  .container{
+    margin-left: -47px;
+  }
+  .radio-input{
+    margin-left: 0px;
+    top: 0px; 
+    left: 0px;
+  }
+}

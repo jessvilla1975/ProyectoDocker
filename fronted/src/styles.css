@@ -1,0 +1,48 @@
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  border-left: 4px solid #7145D6;
+  padding-left: 10px;
+}
+
+.bt {
+  background-color: #8550e1;
+  width: 100%;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  word-wrap: break-word;
+  border: none;
+}
+
+.bt:hover {
+  background-color: #7145D6; /* Color del botón en hover */
+  color: #ffffff;
+}
+
+
+p {
+  margin-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+a {
+  color: #8450E1;   /* Color del texto Reestrablecer contraseña */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
