@@ -1,6 +1,8 @@
 # ProyectoDocker
 # ProyectoDocker
 
+```bash
+
 
 docker stop $(docker ps -q -a)
 docker system prune -a
@@ -24,4 +26,7 @@ mysql -u root -p
 
 1234
 use bdcampus;
-//aqui copiar y pegar las tablas de init.sql 
+//aqui copiar y pegar las tablas de init.sql
+
+
+```
