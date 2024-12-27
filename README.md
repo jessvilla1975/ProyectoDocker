@@ -4,7 +4,7 @@
 - **Alejandro Marín Hoyos** - 2259353-3743  
 - **Carlos Alberto Camacho Castaño** - 2160331-3743  
 - **Harrison Ineey Valencia Otero** - 2159979-3743  
-- **Kevin Alexander Marín**  
+- **Kevin Alexander Marín**  - 2160364-3743
 - **Manuel Antonio Vidales Durán** - 2155481-3743  
 - **Yessica Fernanda Villa Nuñez** - 2266301-3743
 
