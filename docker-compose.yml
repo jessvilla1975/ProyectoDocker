@@ -1,29 +1,30 @@
-version: '3.8'
-
 services:
+
   frontend:
+    container_name: frontend
     build:
       context: ./fronted
       dockerfile: Dockerfile
     ports:
-      - "4200:80"  # Cambiado de 80:80 a 4200:80
+      - "80:80"  # Cambiado de 80:80 a 4200:80
     depends_on:
       - backend
     networks:
       - app-network
 
   backend:
+    container_name: backend
     build: 
       context: ./backend
       dockerfile: Dockerfile
     ports:
       - "9001:9001"
     environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_USERNAME=root
-      - DB_PASSWORD=1234
-      - DB_NAME=bdcampus
+      - DB_HOST: mysql
+      - DB_PORT: 3306
+      - DB_USERNAME: root
+      - DB_PASSWORD: 1234
+      - DB_NAME: bdcampus
     depends_on:
       - mysql
     networks:
@@ -34,8 +35,8 @@ services:
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=1234
-      - MYSQL_DATABASE=bdcampus
+      - MYSQL_ROOT_PASSWORD: 1234
+      - MYSQL_DATABASE: bdcampus
     volumes:
       - mysql-data:/var/lib/mysql
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql

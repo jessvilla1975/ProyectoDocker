@@ -14,6 +14,7 @@ app.use(express.json());
 
 
 
+console.log(process.env.DB_HOST)
 // Crear una conexión a la base de datos usando mysql2
 const connection = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost', // Cambiado a la variable de entorno
@@ -22,6 +23,8 @@ const connection = mysql.createConnection({
     password: process.env.DB_PASSWORD || '1234',// Cambiado a la variable de entorno
     database: process.env.DB_NAME || 'bdcampus'// Cambiado a la variable de entorno
 });
+
+
 
 // Conectar a la base de datos
 connection.connect((err) => {
