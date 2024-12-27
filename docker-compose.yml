@@ -20,11 +20,11 @@ services:
     ports:
       - "9001:9001"
     environment:
-      - DB_HOST: mysql
-      - DB_PORT: 3306
-      - DB_USERNAME: root
-      - DB_PASSWORD: 1234
-      - DB_NAME: bdcampus
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USERNAME: root
+      DB_PASSWORD: 1234
+      DB_NAME: bdcampus
     depends_on:
       - mysql
     networks:
@@ -35,8 +35,8 @@ services:
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: 1234
-      - MYSQL_DATABASE: bdcampus
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: bdcampus
     volumes:
       - mysql-data:/var/lib/mysql
       - ./backend/init.sql:/docker-entrypoint-initdb.d/init.sql
